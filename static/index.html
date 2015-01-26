@@ -1,15 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="">
     <head>
         <title>studybuddy</title>
+        <script src="../node_modules/angular/angular.js"></script>
     </head>
     <body>
         <h1>studybuddy</h1>
         <p>studying made enjoyable.</p>
         <form action="submit">
-            <input type="text" placeholder="username">
-            <input type="password" placeholder="password">
+            <input type="text" ng-model="name" placeholder="username">
+            <input type="password" ng-model="password" placeholder="password">
             <button type="submit">login</button>
         </form>
+        <h2>Here is an example of data binding using AngularJS.</h2>
+        <p>Start typing values in for username and password!</p>
+        <h3>Username: {{name}}</h3>
+        <h3>Password: {{password}}</h3>
+        <p>
+            Pretty neat, huh? We're not going to use this type of data binding
+            specifically in this way, but we will use it to display the user's
+            name after logging in, and stuff. I thought it would be a cool
+            introduction to AngularJS. AngularJS isn't too hard, and it actually
+            makes things like partials and routing easier. Still tricky, but easier.
+        </p>
     </body>
 </html>
