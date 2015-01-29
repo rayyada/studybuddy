@@ -7,40 +7,89 @@
         <link href="../css/bootstrap.min.css" rel="stylesheet">
         <link href="../css/bootstrap-theme.min.css" rel="stylesheet">
         <link href="../css/main.css" rel="stylesheet">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <nav class="navbar navbar-default navbar-inverse navbar-fixed-bottom">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="container-fluid">
-                <div>
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                    <a class="navbar-brand" href="#">studybuddy</a>
+                </div>
+                <div class="collapse navbar-collapse" id="myNavbar">
                     <ul class="nav navbar-nav">
-                        <li><a href="#"><span class="glyphicon glyphicon-home"></span></a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-search"></span></a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-plus"></span></a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-pushpin"></span></a></li>
-                        <li><a href="#"><span class="glyphicon glyphicon-user"></span></a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-home"></span> home</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> <span class="glyphicon glyphicon-user"></span> group</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-search"></span> search</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-plus"></span> create</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-pushpin"></span> pinned</a></li>
+                        <li><a href="#"><span class="glyphicon glyphicon-user"></span> profile</a></li>
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../index.html"><span class="glyphicon glyphicon-log-out"></span> logout</a></li>
                     </ul>
                 </div>
             </div>
         </nav>
         <div class="container">
             <div class="jumbotron">
+                <br /><br />
+                <h1>hello there!</h1>
                 <p>
-
+                    what would you like to do today?
                 </p>
             </div>
-            <div>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad consectetur consequatur labore laboriosam quod reprehenderit suscipit totam voluptates. Consectetur delectus ducimus excepturi incidunt inventore laudantium nulla officiis quia sunt unde?
-                </p>
+            <div class="row">
+                <div class="col-md-12">
+                    <h3>view group</h3>
+                    <span class="glyphicon glyphicon-home"></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam asperiores at corporis, dicta, earum exercitationem nam nobis odit placeat, quo repudiandae saepe sapiente sequi soluta tempore unde vel veniam!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>search group</h3>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam asperiores at corporis, dicta, earum exercitationem nam nobis odit placeat, quo repudiandae saepe sapiente sequi soluta tempore unde vel veniam!</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>create group</h3>
+                    <span class="glyphicon glyphicon-plus"></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam asperiores at corporis, dicta, earum exercitationem nam nobis odit placeat, quo repudiandae saepe sapiente sequi soluta tempore unde vel veniam!</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <h3>pinned groups</h3>
+                    <span class="glyphicon glyphicon-pushpin"></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam asperiores at corporis, dicta, earum exercitationem nam nobis odit placeat, quo repudiandae saepe sapiente sequi soluta tempore unde vel veniam!</p>
+                </div>
+                <div class="col-md-6">
+                    <h3>view/edit profile</h3>
+                    <span class="glyphicon glyphicon-user"></span>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Amet aperiam asperiores at corporis, dicta, earum exercitationem nam nobis odit placeat, quo repudiandae saepe sapiente sequi soluta tempore unde vel veniam!</p>
+                </div>
             </div>
         </div>
     </body>
     <style>
-        .navbar-nav {
-            margin: 0 auto;
-            display: table;
-            table-layout: fixed;
-            float: none;
+        a {
+            text-align: center;
+        }
+        .col-md-6, .col-md-12 {
+            text-align: center;
+        }
+        h3 {
+            font-weight: bold;
+        }
+        .row {
+            text-align: center;
         }
     </style>
 </html>
