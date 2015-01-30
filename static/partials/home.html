@@ -11,7 +11,7 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
     </head>
     <body>
-        <div class="col-xs-12 navbar-inverse navbar-fixed-bottom">
+        <div id="navbar" class="col-xs-12 navbar-inverse navbar-fixed-bottom">
             <div style="margin-top: 10px;" class="row" id="bottomNav">
                 <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-home"></i><br>home</a></div>
                 <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-globe"></i><br>buddies</a></div>
@@ -23,12 +23,12 @@
             <div class="jumbotron">
                 <br /><br />
                 <h1>study groups</h1>
-                <p>you are currently studying with rayada's group</p>
+                <p>you are currently studying with <span style="font-weight: bold;">rayada's group.</span></p>
             </div>
             <div class="container">
                 <div class="row">
                     <div class="col-xs-12" style="background-color: darkseagreen">
-                        <h3>cse 21</h3>
+                        <h3>CSE 21</h3>
                         <h4>rayada's group</h4>
                         <p><span class="glyphicon glyphicon-user"></span> 5</p>
                     </div>
@@ -36,7 +36,7 @@
                 <br />
                 <div class="row">
                     <div class="col-xs-12" style="background-color: #FF944D">
-                        <h3>cse 30</h3>
+                        <h3>CSE 30</h3>
                         <h4>vilanle's group</h4>
                         <p><span class="glyphicon glyphicon-user"> 11</p>
                     </div>
@@ -44,14 +44,14 @@
                 <br />
                 <div class="row">
                     <div class="col-xs-12" style="background-color: #FF944D">
-                        <h3>cse 170</h3>
+                        <h3>CSE 170</h3>
                         <h4>johngamboa's group</h4>
                         <p><span class="glyphicon glyphicon-user"> 7</p>
                     </div>
                 </div>
                 <br />
                 <div class="row">
-                    <div class="col-xs-12" style="background-color: slategray">
+                    <div class="col-xs-12">
                         <h4><i class="glyphicon glyphicon-plus"></i><br/>add new group</h4>
                     </div>
                 </div>
@@ -70,13 +70,18 @@
             color: #808080;
         }
         h3 {
-
+            font-weight: bolder;
         }
         i {
             font-size: 20px;
         }
         .col-xs-12 {
             text-align: center;
+            border-radius: 24px;
+        }
+
+        #navbar {
+            border-radius: 0px;
         }
     </style>
 </html>
