@@ -19,7 +19,7 @@ body {
 
 .btn-lg:hover {
     background: rgba(255, 255, 255, 0.3);
-    color: white;
+    color: white;;
     -o-transition:color .5s ease-out, background .2s ease-in;
     -ms-transition:color .5s ease-out, background .2s ease-in;
     -moz-transition:color .5s ease-out, background .2s ease-in;
