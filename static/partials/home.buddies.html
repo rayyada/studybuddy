@@ -2,6 +2,33 @@
     <div class="jumbotron">
         <h1>buddies</h1>
         <p>see what your buddies are studying for.</p>
-        <p></p>
     </div>
+    <input class="form-control" type="search" ng-model="q" placeholder="search buddies by first name, last name, username, or class and join them..." />
+    <br />
+    <div ng-if="results.length != friends.length" ng-repeat="friend in friends | filter:q as results">
+        <br />
+        <div class="row">
+            <div ng-if="friend.studying == 1" class="col-xs-12" style="background-color: darkseagreen">
+                <h3>{{friend.first_name}} {{friend.last_name}}</h3>
+                <h4>... is studying for {{friend.class}}</h4>
+            </div>
+        </div>
+        <br />
+    </div>
+    <li ng-if="results.length == 0">
+        <strong>No results found for "{{q}}".</strong>
+    </li>
 </div>
+<div ng-init="friends = [
+  {first_name:'John', last_name: 'Gamboa', username: 'jhgamboa', class:'CSE 30', studying: '1'},
+  {first_name:'Joseph', last_name: 'Le', username: 'josephnle', class:'CSE 100', studying: '1'},
+  {first_name:'Jamie', last_name: 'Santos', username: 'jamiesantos', class:'COGS 120', studying: '1'},
+  {first_name:'Ray', last_name: 'Yada', username: 'rayada', class:'CSE 100', studying: '1'},
+  {first_name:'Vilan', last_name: 'Le', username: 'vilanle', class:'MATH 183', studying: '1'}
+]">
+</div>
+<style>
+    li {
+        list-style-type: none;
+    }
+</style>
