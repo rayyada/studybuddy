@@ -26,7 +26,7 @@ app.use(express.static(__dirname + '/static'));
 
 // Allows for HTML5 mode
 app.all('/*', function(req, res, next) {
-    res.sendfile('../index.html', { root: __dirname });
+    res.sendfile('static/index.html', { root: __dirname });
 });
 
 // Start the server
