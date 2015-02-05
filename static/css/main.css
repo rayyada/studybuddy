@@ -27,3 +27,27 @@ body {
     /* ...and now override with proper CSS property */
     transition:color .5s ease-out, background .2s ease-in;
 }
+
+ a, a:hover {
+     text-align: center;
+     color: white;
+     text-decoration: none;
+ }
+a:focus {
+    text-decoration: none;
+    color: #808080;
+}
+h3 {
+    font-weight: bolder;
+}
+i {
+    font-size: 20px;
+}
+.col-xs-12 {
+    text-align: center;
+    border-radius: 24px;
+}
+
+#navbar {
+    border-radius: 0px;
+}

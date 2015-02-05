@@ -5,21 +5,23 @@
     </div>
 </div>
 <div class="container">
-    <form role="form">
-        <div class="form-group">
-            <input type="text" class="form-control" id="username" placeholder="username">
-        </div>
-        <div class="form-group">
-            <input type="password" class="form-control" id="password" placeholder="password">
-        </div>
-        <div class="checkbox">
-            <label>
-                <input type="checkbox">remember me</input>
-            </label>
-        </div>
-        <a ui-sref="home">
-            <button type="submit" class="btn btn-default btn-lg">login</button>
-        </a>
-        <button ui-sref="settings" type="button" class="btn btn-default btn-lg">register</button>
-    </form>
+    <div ui-view></div>
 </div>
+<script>
+    var index = 0, words = ["simple.", "enjoyable.", "stress-free.", "better.", "organized.", "sociable.", "productive."];
+
+    function loop() {
+        if (index >= words.length)
+            index = 0;
+        $('#words').html(words[index++]);
+        $('#words')
+                .fadeIn('slow').animate({opacity: 1.0}, 2000).fadeOut('slow',
+                function() {
+                    return loop()
+                }
+        );
+    }
+    loop();
+</script>
+
+

@@ -2,83 +2,21 @@
 <html>
     <head lang="en">
         <meta charset="UTF-8">
-        <title>studybuddy.</title>
+        <title>studybuddy</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+        <link href="css/main.css" type="text/css"/>
     </head>
     <body>
         <div id="navbar" class="col-xs-12 navbar-inverse navbar-fixed-bottom">
             <div style="margin-top: 10px;" class="row" id="bottomNav">
-                <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-home"></i><br>home</a></div>
-                <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-globe"></i><br>buddies</a></div>
-                <div class="col-xs-3 text-center"><a href="#"><i class="glyphicon glyphicon-user"></i><br>profile</a></div>
-                <div class="col-xs-3 text-center"><a href="../index.html"><i class="glyphicon glyphicon-log-out"></i><br>logout<br /></a></div>
+                <div class="col-xs-3 text-center"><a ui-sref="home.groups"><i class="glyphicon glyphicon-home"></i><br>home</a></div>
+                <div class="col-xs-3 text-center"><a ui-sref="home.buddies"><i class="glyphicon glyphicon-globe"></i><br>buddies</a></div>
+                <div class="col-xs-3 text-center"><a ui-sref="home.profile"><i class="glyphicon glyphicon-user"></i><br>profile</a></div>
+                <div class="col-xs-3 text-center"><a ui-sref="login.login"><i class="glyphicon glyphicon-log-out"></i><br>logout<br /></a></div>
             </div>
         </div>
-        <div class="container">
-            <div class="jumbotron">
-                <br /><br />
-                <h1>study groups</h1>
-                <p>you are currently studying with <span style="font-weight: bold;">rayada's group.</span></p>
-            </div>
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12" style="background-color: darkseagreen">
-                        <h3>CSE 21</h3>
-                        <h4>rayada's group</h4>
-                        <p><span class="glyphicon glyphicon-user"></span> 5</p>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-xs-12" style="background-color: #FF944D">
-                        <h3>CSE 30</h3>
-                        <h4>vilanle's group</h4>
-                        <p><span class="glyphicon glyphicon-user"> 11</p>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-xs-12" style="background-color: #FF944D">
-                        <h3>CSE 170</h3>
-                        <h4>johngamboa's group</h4>
-                        <p><span class="glyphicon glyphicon-user"> 7</p>
-                    </div>
-                </div>
-                <br />
-                <div class="row">
-                    <div class="col-xs-12">
-                        <h4><i class="glyphicon glyphicon-plus"></i><br/>add new group</h4>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div style="width: 100%; height: 100px"></div>
+        <div ui-view></div>
     </body>
-    <style>
-        a, a:hover {
-            text-align: center;
-            color: white;
-            text-decoration: none;
-        }
-        a:focus {
-            text-decoration: none;
-            color: #808080;
-        }
-        h3 {
-            font-weight: bolder;
-        }
-        i {
-            font-size: 20px;
-        }
-        .col-xs-12 {
-            text-align: center;
-            border-radius: 24px;
-        }
-
-        #navbar {
-            border-radius: 0px;
-        }
-    </style>
 </html>
