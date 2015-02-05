@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html ng-app="app">
     <head>
+        <!-- use this for local deployment -->
+        <!--<base href="/introHCI/studybuddy/static/index.html"/>-->
+
+        <!-- use this for Heroku deployment -->
+        <base href="/">
+
         <title>studybuddy</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,12 +21,6 @@
         <script src="js/angular-ui-router.min.js"></script>
 
         <script src="js/app.js"></script>
-
-        <!-- use this for local deployment -->
-        <!--<base href="/introHCI/studybuddy/static/index.html"/>-->
-
-        <!-- use this for Heroku deployment -->
-        <base href="/">
     </head>
     <body>
         <div ui-view></div>
