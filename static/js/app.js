@@ -37,6 +37,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
     $urlRouterProvider.otherwise("/");
 });
 
-app.config(["$locationProvider", function($locationProvider) {
+app.config(function($locationProvider) {
     $locationProvider.html5Mode(true);
-}]);
+});
+

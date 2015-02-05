@@ -24,6 +24,11 @@ app.use(express.compress());
 // maps to /static/index.html on this machine
 app.use(express.static(__dirname + '/static'));
 
+// Allows for HTML5 mode
+app.all('/*', function(req, res, next) {
+    res.sendfile('index.html', { root: __dirname });
+});
+
 // Start the server
 var port = process.env.PORT || PORT; // 80 for web, 3000 for development
 app.listen(port, function() {
