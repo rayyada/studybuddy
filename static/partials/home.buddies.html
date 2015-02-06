@@ -2,29 +2,36 @@
     <div class="jumbotron">
         <h1>buddies</h1>
         <p>see what your buddies are studying for.</p>
+        <input class="form-control" type="search" ng-model="q" placeholder="search study buddies..." />
     </div>
-    <input class="form-control" type="search" ng-model="q" placeholder="search buddies by first name, last name, username, or class and join them..." />
-    <br />
+    <div ng-if="results.length == 0">
+        <strong>No results found for "{{q}}".</strong>
+    </div>
     <div ng-if="results.length != friends.length" ng-repeat="friend in friends | filter:q as results">
-        <br />
         <div class="row">
             <div ng-if="friend.studying == 1" class="col-xs-12" style="background-color: darkseagreen">
-                <h3>{{friend.first_name}} {{friend.last_name}}</h3>
-                <h4>... is studying for {{friend.class}}</h4>
+                <a ui-sref="buddies/{{friend.username}}">
+                    <h3>{{friend.first_name}} {{friend.last_name}}</h3>
+                    <h4>... is studying for {{friend.class}}</h4>
+                </a>
             </div>
         </div>
         <br />
     </div>
-    <li ng-if="results.length == 0">
-        <strong>No results found for "{{q}}".</strong>
-    </li>
+
 </div>
 <div ng-init="friends = [
   {first_name:'John', last_name: 'Gamboa', username: 'jhgamboa', class:'CSE 30', studying: '1'},
   {first_name:'Joseph', last_name: 'Le', username: 'josephnle', class:'CSE 100', studying: '1'},
   {first_name:'Jamie', last_name: 'Santos', username: 'jamiesantos', class:'COGS 120', studying: '1'},
   {first_name:'Ray', last_name: 'Yada', username: 'rayada', class:'CSE 100', studying: '1'},
-  {first_name:'Vilan', last_name: 'Le', username: 'vilanle', class:'MATH 183', studying: '1'}
+  {first_name:'Vilan', last_name: 'Le', username: 'vilanle', class:'MATH 183', studying: '1'},
+  {first_name:'Roger', last_name: 'Ruan', username: 'ruanaway', class:'CSE 12', studying: '1'},
+  {first_name:'Stephen', last_name: 'Carrington', username: 'scarrington', class:'PHYS 4A', studying: '1'},
+  {first_name:'Michelle', last_name: 'Ragsac', username: 'mragsac', class:'CHEM 140A', studying: '1'},
+  {first_name:'Naveen', last_name: 'Kashyap', username: 'snaplessnaveen', class:'ECE 65', studying: '1'},
+  {first_name:'Bill', last_name: 'Huynh', username: 'bhuynh', class:'MATH 183', studying: '1'},
+  {first_name:'Roland', last_name: 'Kong', username: 'rolandkong', class:'ECE 45', studying: '1'}
 ]">
 </div>
 <style>

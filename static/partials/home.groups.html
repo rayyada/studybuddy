@@ -1,37 +1,47 @@
 <div class="container">
     <div class="jumbotron">
         <h1>study groups</h1>
-        <p>you are currently studying with <span style="font-weight: bold;">rayada's group.</span></p>
+        <p ng-repeat="group in groups" ng-if="group.current == 1">you are currently studying for
+            <span class="status">{{group.class}} </span>with <span class="status">{{group.owner}}</span>
+        </p>
     </div>
     <div class="container">
-        <div class="row">
-            <div class="col-xs-12" style="background-color: darkseagreen">
-                <h3>CSE 21</h3>
-                <h4>rayada's group</h4>
-                <p><span class="glyphicon glyphicon-user"></span> 5</p>
+        <div ng-repeat="group in groups">
+            <div class="row">
+                <div ng-if="group.current == 0" class="col-xs-12" style="background-color: darkseagreen">
+                    <h3>{{group.class}}</h3>
+                    <h4>{{group.owner}}'s group</h4>
+                    <p>
+                        <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
+                    </p>
+                </div>
+                <div ng-if="group.current == 1" class="col-xs-12" style="background-color: darkolivegreen">
+                    <h3>{{group.class}}</h3>
+                    <h4>{{group.owner}}'s group</h4>
+                    <p>
+                        <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
+                    </p>
+                </div>
             </div>
+            <br />
         </div>
-        <br />
-        <div class="row">
-            <div class="col-xs-12" style="background-color: #FF944D">
-                <h3>CSE 30</h3>
-                <h4>vilanle's group</h4>
-                <p><span class="glyphicon glyphicon-user"> 11</p>
+        <a ui-sref="home.add">
+            <div class="row">
+                <div class="col-xs-12">
+                    <h4><i class="glyphicon glyphicon-plus"></i><br/>add new group</h4>
+                </div>
             </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-xs-12" style="background-color: #FF944D">
-                <h3>CSE 170</h3>
-                <h4>johngamboa's group</h4>
-                <p><span class="glyphicon glyphicon-user"> 7</p>
-            </div>
-        </div>
-        <br />
-        <div class="row">
-            <div class="col-xs-12">
-                <h4><i class="glyphicon glyphicon-plus"></i><br/>add new group</h4>
-            </div>
-        </div>
+        </a>
     </div>
+    <div ng-init="groups = [
+    {owner: 'rayada', class: 'CSE 21', current: '1', members: '5', member_limit:'10'},
+    {owner: 'vilanle', class: 'CSE 30', current: '0', members: '11', member_limit: '11'},
+    {owner: 'johngamboa', class: 'CSE 170', current: '0', members: '5', member_limit: '7'}]">
+    </div>
+    <style>
+        .status {
+            font-weight: bold;
+            color: darkolivegreen;
+        }
+    </style>
 </div>

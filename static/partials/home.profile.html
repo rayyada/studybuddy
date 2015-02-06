@@ -3,19 +3,16 @@
         <h1>profile</h1>
         <p>view or update your information</p>
     </div>
-    <div>
+    <div ng-repeat="user in users">
         <form role="form">
-            <div id="pic">
-                <label for="file-input">
-                    <img id="avatar" height="130px" width="130px" src="http://i163.photobucket.com/albums/t293/dolliejen/anonymous-icon.png" alt="your image" />
-                </label>
-                <input type='file' id="file-input"/><br /><br/>
+            <div class="form-group">
+                <input type="text" class="form-control" value="{{user.first_name}}" placeholder="first name">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" value="first name" placeholder="first name">
+                <input type="text" class="form-control" value="{{user.last_name}}" placeholder="last name">
             </div>
             <div class="form-group">
-                <input type="text" class="form-control" value="last name" placeholder="last name">
+                <input type="text" class="form-control" value="{{user.username}}" placeholder="username">
             </div>
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="old password">
@@ -26,9 +23,6 @@
             <div class="form-group">
                 <input type="password" class="form-control" placeholder="retype new password">
             </div>
-            <div class="form-group">
-                <textarea class="form-control" placeholder="Enter a description of yourself..."></textarea>
-            </div>
             <div id="buttons">
                 <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
                 <button type="reset" class="btn btn-warning"><span class="glyphicon glyphicon-refresh"></span></button>
@@ -36,31 +30,12 @@
         </form>
     </div>
 </div>
-<script>
-    $(function () {
-        $(":file").change(function () {
-            if (this.files && this.files[0]) {
-                var reader = new FileReader();
-                reader.onload = imageIsLoaded;
-                reader.readAsDataURL(this.files[0]);
-            }
-        });
-    });
-
-    function imageIsLoaded(e) {
-        $('#avatar').attr('src', e.target.result);
-    };
-</script>
+<div ng-init="users = [
+  {first_name:'John', last_name: 'Gamboa', username: 'jhgamboa'}
+]">
+</div>
+<script src="../js/home.profile.js"></script>
 <style>
-    img {
-        border-radius: 50%;
-    }
-    #pic {
-        text-align: center;
-    }
-    #pic > input  {
-        display: none;
-    }
     .glyphicon-ok, .glyphicon-refresh {
         font-size: 40px;
     }

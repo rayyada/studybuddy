@@ -33,6 +33,10 @@ app.config(function($stateProvider, $urlRouterProvider) {
         .state("home.profile", {
             url: '/profile',
             templateUrl: "partials/home.profile.html"
+        })
+        .state("home.add", {
+            url: '/add',
+            templateUrl: "partials/home.add.html"
         });
     $urlRouterProvider.otherwise("/");
 });

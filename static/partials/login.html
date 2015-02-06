@@ -1,28 +1,13 @@
 <div class="container">
     <div class="jumbotron">
         <h1>studybuddy</h1>
-        <p>studying made <span style="font-weight: bold;" id="words"></span></p>
+        <p>studying made <span id="words"></span></p>
     </div>
 </div>
 <div class="container">
     <div ui-view></div>
 </div>
-<script>
-    var index = 0, words = ["simple.", "enjoyable.", "stress-free.", "better.", "organized.", "sociable.", "productive."];
-
-    function loop() {
-        if (index >= words.length)
-            index = 0;
-        $('#words').html(words[index++]);
-        $('#words')
-                .fadeIn('slow').animate({opacity: 1.0}, 1000).fadeOut('slow',
-                function() {
-                    return loop()
-                }
-        );
-    }
-    loop();
-</script>
-
+<link href="../css/login.css" rel="stylesheet">
+<script src="../js/jumbotron.js"></script>
 
 
