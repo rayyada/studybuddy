@@ -45,3 +45,15 @@ app.config(function($locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
+app.controller("PanelController", function(){
+    this.tab = 1;
+    this.selectTab = function(setTab)
+    {
+        this.tab = setTab;
+    }
+    this.isSelected = function(checkTab)
+    {
+        return this.tab === checkTab;
+    }
+});
+
