@@ -45,3 +45,21 @@ app.config(function($locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
+app.controller('UserCtrl', function($http, $scope) {
+    $http.get("data/user.json").success(function(data) {
+        $scope.user = data;
+    });
+});
+
+app.controller('GroupCtrl', function($scope, $http) {
+    $http.get("data/groups.json").success(function(data) {
+        $scope.groups = data;
+    });
+});
+
+app.controller('BuddyCtrl', function($http, $scope) {
+    $http.get("data/buddies.json").success(function(data) {
+        $scope.buddies = data;
+    });
+});
+

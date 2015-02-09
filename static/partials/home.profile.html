@@ -3,7 +3,7 @@
         <h1>profile</h1>
         <p>view or update your information</p>
     </div>
-    <div ng-repeat="user in users">
+    <div ng-controller="UserCtrl">
         <form role="form">
             <div class="form-group">
                 <input type="text" class="form-control" value="{{user.first_name}}" placeholder="first name">
@@ -30,11 +30,6 @@
         </form>
     </div>
 </div>
-<div ng-init="users = [
-  {first_name:'John', last_name: 'Gamboa', username: 'jhgamboa'}
-]">
-</div>
-<script src="../js/home.profile.js"></script>
 <style>
     .glyphicon-ok, .glyphicon-refresh {
         font-size: 40px;
