@@ -1,0 +1,23 @@
+[
+  {
+    "owner": "rayada",
+    "class": "CSE 21",
+    "current": 1,
+    "members": 5,
+    "member_limit": 10
+  },
+  {
+    "owner": "vilanle",
+    "class": "CSE 30",
+    "current": 0,
+    "members": 11,
+    "member_limit": 11
+  },
+  {
+    "owner": "johngamboa",
+    "class": "CSE 170",
+    "current": 0,
+    "members": 5,
+    "member_limit": 7
+  }
+]

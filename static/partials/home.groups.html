@@ -1,47 +1,45 @@
-<div class="container">
-    <div class="jumbotron">
+<div ng-controller="UserGroupsCtrl" class="container">
+    <div ng-controller='UserCtrl' class="jumbotron">
         <h1>study groups</h1>
-        <p ng-repeat="group in groups" ng-if="group.current == 1">you are currently studying for
-            <span class="status">{{group.class}} </span>with <span class="status">{{group.owner}}</span>
-        </p>
+        <h3>Welcome back, {{user.first_name}}!</h3>
     </div>
-    <div class="container">
-        <div ng-repeat="group in groups">
+    <div ng-repeat="group in groups" class="container">
+        <div>
             <div class="row">
-                <div ng-if="group.current == 0" class="col-xs-12" style="background-color: darkseagreen">
-                    <h3>{{group.class}}</h3>
-                    <h4>{{group.owner}}'s group</h4>
-                    <p>
-                        <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
-                    </p>
-                </div>
-                <div ng-if="group.current == 1" class="col-xs-12" style="background-color: darkolivegreen">
-                    <h3>{{group.class}}</h3>
-                    <h4>{{group.owner}}'s group</h4>
-                    <p>
-                        <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
-                    </p>
-                </div>
+                <a ui-sref="home.group({class: group.class, owner: group.owner})">
+                    <div ng-if="group.current == 0" class="col-xs-12" style="background-color:darkgrey">
+                        <h3>{{group.class}}</h3>
+                        <h4>{{group.owner}}'s group</h4>
+                        <p>
+                            <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
+                        </p>
+                    </div>
+                </a>
+                <a ui-sref="home.group({class: group.class, owner: group.owner})">
+                    <div ng-if="group.current == 1" class="col-xs-12" style="background-color: darkolivegreen">
+                        <h3>{{group.class}}</h3>
+                        <h4>{{group.owner}}'s group</h4>
+                        <p>
+                            <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
+                        </p>
+                    </div>
+                </a>
             </div>
             <br />
         </div>
-        <a ui-sref="home.add">
-            <div class="row">
-                <div class="col-xs-12">
-                    <h4><i class="glyphicon glyphicon-plus"></i><br/>add new group</h4>
-                </div>
+    </div>
+    <a ui-sref="home.add">
+        <div class="row">
+            <div class="col-xs-12">
+                <h4><i class="glyphicon glyphicon-plus"></i><br/>add new group</h4>
             </div>
-        </a>
-    </div>
-    <div ng-init="groups = [
-    {owner: 'rayada', class: 'CSE 21', current: '1', members: '5', member_limit:'10'},
-    {owner: 'vilanle', class: 'CSE 30', current: '0', members: '11', member_limit: '11'},
-    {owner: 'johngamboa', class: 'CSE 170', current: '0', members: '5', member_limit: '7'}]">
-    </div>
-    <style>
-        .status {
-            font-weight: bold;
-            color: darkolivegreen;
-        }
-    </style>
+        </div>
+    </a>
 </div>
+<style>
+    .status {
+        font-weight: bold;
+        color: darkolivegreen;
+    }
+</style>
+

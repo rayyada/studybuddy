@@ -44,23 +44,3 @@ app.config(function($stateProvider, $urlRouterProvider) {
 app.config(function($locationProvider) {
     $locationProvider.html5Mode(true);
 });
-
-angular.module('registerPage', ['registerPage.directives']);
-function registerController ($scope) {
-    $scope.pw1 = 'password';
-}
-
-angular.module('registerPage.directives', [])
-    .directive('pwCheck', [function() {
-        return {
-            require: 'ngModel',
-            link: function(scope, elem, attrs, ctrl) {
-                var firstPassword = '#' + attrs.pwCheck;
-                elem.add(firstPassword).on('keyup', function() {
-                    scope.$apply(function() {
-                        ctrl.$setvalidity('pwmatch', elem.val() === $(firstPassword).val());
-                    });
-                });
-            }
-        }
-    }]);

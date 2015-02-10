@@ -3,7 +3,7 @@
         <h1>profile</h1>
         <p>view or update your information</p>
     </div>
-    <div ng-repeat="user in users">
+    <div ng-controller="UserCtrl">
         <form role="form">
             <div class="form-group">
                 <input type="text" class="form-control" value="{{user.first_name}}" placeholder="first name">
@@ -24,20 +24,15 @@
                 <input type="password" class="form-control" placeholder="retype new password">
             </div>
             <div id="buttons">
-                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-ok"></span></button>
-                <button type="reset" class="btn btn-warning"><span class="glyphicon glyphicon-refresh"></span></button>
+                <button type="submit" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-ok"></span> save changes</button>
+                <button type="reset" class="btn btn-default btn-lg"><span class="glyphicon glyphicon-refresh"></span> reset changes</button>
             </div>
         </form>
     </div>
 </div>
-<div ng-init="users = [
-  {first_name:'John', last_name: 'Gamboa', username: 'jhgamboa'}
-]">
-</div>
-<script src="../js/home.profile.js"></script>
 <style>
     .glyphicon-ok, .glyphicon-refresh {
-        font-size: 40px;
+        font-size: 30px;
     }
 
     #buttons {

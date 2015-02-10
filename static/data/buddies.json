@@ -1,0 +1,37 @@
+[
+  {
+    "first_name": "John",
+    "last_name": "Gamboa",
+    "username": "johngamboa",
+    "class": "CSE 30",
+    "studying": 1
+  },
+  {
+    "first_name": "Vilan",
+    "last_name": "Le",
+    "username": "vilanle",
+    "class": "MATH 183",
+    "studying": 1
+  },
+  {
+    "first_name": "Ray",
+    "last_name":"Yada",
+    "username":"rayyada",
+    "class":"CSE 110",
+    "studying": 1
+  },
+  {
+    "first_name": "Joseph",
+    "last_name":"Le",
+    "username":"josephnle",
+    "class": "CSE 110",
+    "studying": 1
+  },
+  {
+    "first_name": "Jamie",
+    "last_name":"Santos",
+    "username":"jamiesantos",
+    "class": "COGS 120",
+    "studying": 1
+  }
+]
