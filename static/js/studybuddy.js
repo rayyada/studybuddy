@@ -45,15 +45,22 @@ app.config(function($locationProvider) {
     $locationProvider.html5Mode(true);
 });
 
-app.controller("PanelController", function(){
-    this.tab = 1;
-    this.selectTab = function(setTab)
-    {
-        this.tab = setTab;
-    }
-    this.isSelected = function(checkTab)
-    {
-        return this.tab === checkTab;
-    }
-});
+angular.module('registerPage', ['registerPage.directives']);
+function registerController ($scope) {
+    $scope.pw1 = 'password';
+}
 
+angular.module('registerPage.directives', [])
+    .directive('pwCheck', [function() {
+        return {
+            require: 'ngModel',
+            link: function(scope, elem, attrs, ctrl) {
+                var firstPassword = '#' + attrs.pwCheck;
+                elem.add(firstPassword).on('keyup', function() {
+                    scope.$apply(function() {
+                        ctrl.$setvalidity('pwmatch', elem.val() === $(firstPassword).val());
+                    });
+                });
+            }
+        }
+    }]);

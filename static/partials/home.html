@@ -9,10 +9,11 @@
         <link href="css/main.css" rel="stylesheet">
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
         <link href="css/main.css" type="text/css"/>
+        
         <script type="text/javascript">
             var elems = document.getElementsByClassName('confirmation');
             var confirmIt = function (e) {
-                if (confirm('Are you sure?')) 
+                if (!confirm('Are you sure?')) 
                 {
                     e.preventDefault();
                 }
