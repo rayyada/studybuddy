@@ -1,4 +1,4 @@
-<div ng-controller='BuddyCtrl' class="container">
+<div ng-controller='BuddiesCtrl' class="container">
     <div class="jumbotron">
         <h1>buddies</h1>
         <p>see what your buddies are studying for.</p>
@@ -9,12 +9,15 @@
     </div>
     <div ng-if="results.length != buddies.length" ng-repeat="buddy in buddies | filter:q as results">
         <div class="row">
-            <div ng-if="buddy.studying == 1" class="col-xs-12" style="background-color: darkseagreen">
-                <h3>{{buddy.first_name}} {{buddy.last_name}}</h3>
-                <h4>... is studying for {{buddy.class}}</h4>
-            </div>
+            <a ui-sref="home.buddy({username: buddy.username})">
+                <div ng-if="buddy.studying == 1" class="col-xs-12" style="background-color: darkseagreen">
+                    <h3>{{buddy.first_name}} {{buddy.last_name}}</h3>
+                    <h4>is studying for {{buddy.class}}</h4>
+                </div>
+            </a>
         </div>
         <br />
+
     </div>
 </div>
 <style>

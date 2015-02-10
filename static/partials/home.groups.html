@@ -1,24 +1,29 @@
-<div ng-controller="GroupCtrl" class="container">
-    <div  class="jumbotron">
+<div ng-controller="UserGroupsCtrl" class="container">
+    <div ng-controller='UserCtrl' class="jumbotron">
         <h1>study groups</h1>
+        <h3>Welcome back, {{user.first_name}}!</h3>
     </div>
-    <div ng-controller='GroupCtrl' ng-repeat="group in groups" class="container">
+    <div ng-repeat="group in groups" class="container">
         <div>
             <div class="row">
-                <div ng-if="group.current == 0" class="col-xs-12" style="background-color:darkgrey">
-                    <h3>{{group.class}}</h3>
-                    <h4>{{group.owner}}'s group</h4>
-                    <p>
-                        <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
-                    </p>
-                </div>
-                <div ng-if="group.current == 1" class="col-xs-12" style="background-color: darkolivegreen">
-                    <h3>{{group.class}}</h3>
-                    <h4>{{group.owner}}'s group</h4>
-                    <p>
-                        <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
-                    </p>
-                </div>
+                <a ui-sref="home.group({class: group.class, owner: group.owner})">
+                    <div ng-if="group.current == 0" class="col-xs-12" style="background-color:darkgrey">
+                        <h3>{{group.class}}</h3>
+                        <h4>{{group.owner}}'s group</h4>
+                        <p>
+                            <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
+                        </p>
+                    </div>
+                </a>
+                <a ui-sref="home.group({class: group.class, owner: group.owner})">
+                    <div ng-if="group.current == 1" class="col-xs-12" style="background-color: darkolivegreen">
+                        <h3>{{group.class}}</h3>
+                        <h4>{{group.owner}}'s group</h4>
+                        <p>
+                            <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
+                        </p>
+                    </div>
+                </a>
             </div>
             <br />
         </div>
