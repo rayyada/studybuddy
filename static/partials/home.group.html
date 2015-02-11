@@ -1,4 +1,24 @@
-<div>
-    <h1>This is the group page.</h1>
-    {{group}}
+<div ng-controller="BuddyCtrl" class="container">
+    <div class="jumbotron">
+        <h1>{{group.class}}</h1>
+        <h2>{{group.owner}}'s study group</h2>
+        <p>Members: </p>
+        <div ng-repeat="buddy in buddies" ng-click="">
+        <p>
+        	<a ui-sref="home.buddy({username: buddy.username})">
+      		{{buddy.first_name}}
+        </p>
+        </div>
+        <div ng-controller='UserGroupsCtrl'>
+            <a ui-sref="home.groups">
+                <button class="btn btn-default btn-lg">back</button>
+            </a>
+            <a ng-if="group.current === 0" ui-sref="home.groups">
+                <button ng-if="group.members === group.member_limit" ng-confirm-click="Are you sure you want to join the group?" class="btn btn-default btn-lg">join group</button>
+            </a>
+            <a ng-if="group.current === 1" ui-sref="home.groups">
+                <button ng-confirm-click="Are you sure you want to leave the group?" class="btn btn-default btn-lg">leave group</button>
+            </a>
+        </div>
+    </div>
 </div>

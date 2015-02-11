@@ -3,7 +3,10 @@
         <h1>{{buddy.username}}</h1>
         <p>{{buddy.first_name}} is currently studying for {{buddy.class}}.</p>
         <a ui-sref="home.buddies">
-            <button class="btn btn-default btn-lg">back to search</button>
+            <button class="btn btn-default btn-lg">back</button>
+        </a>
+        <a ui-sref="home.group({class: buddy.class, owner: buddy.group})">
+            <button class="btn btn-default btn-lg">view study group</button>
         </a>
     </div>
 </div>

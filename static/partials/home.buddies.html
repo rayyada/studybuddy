@@ -2,22 +2,23 @@
     <div class="jumbotron">
         <h1>buddies</h1>
         <p>see what your buddies are studying for.</p>
-        <input class="form-control" type="search" ng-model="q" placeholder="search study buddies..." />
+
+        <!--do something like a dropbar menu to choose ng-model to search for -->
+        <input class="form-control" type="search" ng-model="q.last_name" placeholder="search study buddies..." />
     </div>
     <div ng-if="results.length == 0">
-        <strong>No results found for "{{q}}".</strong>
+        <strong>No results found for "{{q.last_name}}".</strong>
     </div>
     <div ng-if="results.length != buddies.length" ng-repeat="buddy in buddies | filter:q as results">
         <div class="row">
             <a ui-sref="home.buddy({username: buddy.username})">
-                <div ng-if="buddy.studying == 1" class="col-xs-12" style="background-color: darkseagreen">
+                <div class="col-xs-12" style="background-color: darkseagreen">
                     <h3>{{buddy.first_name}} {{buddy.last_name}}</h3>
                     <h4>is studying for {{buddy.class}}</h4>
                 </div>
             </a>
         </div>
         <br />
-
     </div>
 </div>
 <style>

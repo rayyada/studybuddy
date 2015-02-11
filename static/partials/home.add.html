@@ -1,16 +1,16 @@
 <div class="container">
     <div class="jumbotron">
         <h1>add new group</h1>
-        <p>choose to either join or host a study group</p>
+        <p>choose to either join or create a study group</p>
     </div>
-    <div class="row">z
-        <div class="col-xs-6">
-            <h4><i class="glyphicon glyphicon-plus"></i><br/>create new group</h4>
-        </div>
-        <div class="col-xs-6">
-            <h4><i class="glyphicon glyphicon-asterisk"></i><br/>join existing group</h4>
-        </div>
-    </div>
+    <a ui-sref="home.add.join">
+        <button class="btn btn-default btn-lg">join</button>
+    </a>
+    <a ui-sref="home.add.create">
+        <button class="btn btn-default btn-lg">create</button>
+    </a>
+    <br /><br />
+    <div ui-view></div>
 </div>
 <style>
     .col-xs-6 {

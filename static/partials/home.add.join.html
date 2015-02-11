@@ -1,0 +1,25 @@
+<div class="container">
+    <input class="form-control" type="search" ng-model="q.class" placeholder="search study groups by class..." />
+    <br /><br />
+    <a ui-sref="home.groups">
+        <button class="btn btn-default btn-lg">back</button>
+    </a>
+    <div ng-if="results.length == 0">
+        <strong>No results found for "{{q}}".</strong>
+    </div>
+    <br/><br/>
+    <div ng-if="results.length != groups.length" ng-repeat="group in groups | filter:q as results">
+        <div class="row">
+            <a ui-sref="home.group({class: group.class, owner: group.owner})">
+                <div class="col-xs-12" style="background-color: darkseagreen">
+                    <h3>{{group.class}}</h3>
+                    <h4>{{group.owner}}'s group</h4>
+                    <p>
+                        <span class="glyphicon glyphicon-user"> {{group.members}}/{{group.member_limit}}</span>
+                    </p>
+                </div>
+            </a>
+        </div>
+        <br />
+    </div>
+</div>
